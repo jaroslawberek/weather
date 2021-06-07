@@ -1,7 +1,7 @@
 # Weather
 Weather jest aplikacją napisaną w celu rekrutacji na stanowisko programisty. Specyfikacja aplikacji została wysłane w emailu i wg niej oraz rozmowy telefonicznej, został utworzony projekt.
 
-##Specyfikacja
+## Specyfikacja
 Korzystając z publicznie dostępnych usług sieciowych, stwórz aplikację, która będzie pobierała i wyświetlała w dowolnym miejscu strony informację na temat pogody w wybranym przez użytkownika mieście.
 Aplikacja powinna umożliwiać:
 Sprawdzenie przez każdego użytkownika stanu aktualnej pogody w wybranym z przedefiniowanej listy mieście. W wypadku braku połączenia z zewnętrznymi usługami, wyświetlony powinien być ostatni stan pogody. Aplikacja powinna umożliwiać odświeżenie informacji pogodowych bez przeładowania strony.
@@ -12,7 +12,7 @@ Edycję listy miast (dodawanie, usuwanie, zmiana) dla których możliwe jest spr
 Zalecane jest, aby rozwiązanie umożliwiało rozszerzenie swojej funkcjonalności również na innych dostawców danych pogodowych.
 Należy użyć framework'a Symfony, działającego na Docker z PHP Możliwość użycia bibliotek firm trzecich.
 
-##Technologia
+## Technologia
 
 Projekt stworzono w oparciu o Laravel 5.8 (w rozmowie telefonicznej zezwolono na ten framework), MySql dbMaria, jQuery, boostrap4
 Projekt testowany był na xampp ver. 3.2.4
@@ -20,7 +20,7 @@ Projekt testowany był na xampp ver. 3.2.4
 ## Installation
 
 Po pobraniu projektu z repozytorium należy w konsoli uruchomić (po przejsciu do projektu)
-
+(UWAGA! U mnie na xapp wymagane było odblokowanie SOAP w pliku php.ini)
 
 ```
 npm install
@@ -31,7 +31,8 @@ oraz
 composer update
 ```
 
-Nastepnie aby w bazie pojawiły sie tabele ze wstępnymi rekordami należy uruchomić migracje wraz z opcja --seed
+
+Nastepnie aby w bazie pojawiły sie tabele ze wstępnymi rekordami należy uruchomić migracje wraz z opcja --seed. Pliki Seeds tworza tabele użytkowników  z dwoma uzytkownikami (za pomocą Fakaker) oraz trzy miasta: Katowice, Warszawa i jedno nieistniejące.
 
 ```
 php artisan migrate:fresh --seed
