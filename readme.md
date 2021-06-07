@@ -41,9 +41,9 @@ Wcześnij należy oczywiści utorzyć baze danych w srodowisku MySql. Aplikacja 
 
 ##Wykonanie
 
-Do określenia aktualnej pogody użyłem https://openweathermap.org/api. W pliku config/weather znajdują się podstawowe ustawienia takie jak token oraz co jaki czas trona w AJAX ma pobierać stan pogody.
+Do określenia aktualnej pogody użyłem https://openweathermap.org/api. W pliku config/weather znajdują się podstawowe ustawienia takie jak token oraz co jaki czas strona w AJAX ma pobierać stan pogody.
 
-Aplikacja zbudowana jest w oparciu o MVC oraz wykozystanie wzorców projektowych takich jak Gateway oraz Repozytory (katalog App/Weather).
+Aplikacja zbudowana jest w oparciu o MVC oraz wykorzystanie wzorców projektowych takich jak Gateway oraz Repozytory (katalog App/Weather).
 Obiekt OpenWeatherCurrentWeatherRepository, który implementuje interface  CurrentWeatherRepositoryInterface za pomocą cUrl pobiera informacje o pogodzie a nastepnie zwraca obiekt typu CurrentWeater. Aby dodać innego dostawce informscji o aktualnej pogodzie nalezy utworzyć nowy obiekt implementujący interface CurrentWeatherRepositoryInterface w configuracji ustawić token i inne istotne dane, a nastpnie w plku App/Providers/AppServiceProvider dokonać przełączenia wskazania interfajsu na odpowedni obiekt resposytory.
 
 Po zalogowaniu sie istaniej możliwość dodawania usuwania  miasta oraz wskazania, które miasto ma być domyślnie ustawione.
