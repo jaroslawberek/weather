@@ -32,23 +32,24 @@ composer update
 ```
 
 
-Nastepnie aby w bazie pojawiły sie tabele ze wstępnymi rekordami należy uruchomić migracje wraz z opcja --seed. Pliki Seeds tworza tabele użytkowników  z dwoma uzytkownikami (za pomocą Fakaker) oraz trzy miasta: Katowice, Warszawa i jedno nieistniejące.
+Nastepnie aby w bazie pojawiły sie tabele ze wstępnymi rekordami należy uruchomić migracje wraz z opcja --seed. Pliki Seeds tworza tabele użytkowników  z dwoma użytkownikami (za pomocą Fakaker) oraz trzy miasta: Katowice, Warszawa i jedno nieistniejące.
 
 ```
 php artisan migrate:fresh --seed
 ```
-Wcześnij należy oczywiści utorzyć baze danych w srodowisku MySql. Aplikacja zakłada nazwe bazy: weather, użytkownika: root bez podania hasla. W razie konieczności dane logowania trzeba poprawić w pliku .env znajdującego w katalogu głowownym aplikacji.
+Wcześniej należy oczywiści utworzyć bazę danych w środowisku MySql. Aplikacja zakłada nazwę bazy: weather, użytkownika: root bez podania hasła. W razie konieczności dane logowania trzeba poprawić w pliku .env znajdującego w katalogu głównym aplikacji.
 
-##Wykonanie
+
+## Wykonanie
 
 Do określenia aktualnej pogody użyłem https://openweathermap.org/api. W pliku config/weather znajdują się podstawowe ustawienia takie jak token oraz co jaki czas strona w AJAX ma pobierać stan pogody.
 
 Aplikacja zbudowana jest w oparciu o MVC oraz wykorzystanie wzorców projektowych takich jak Gateway oraz Repozytory (katalog App/Weather).
-Obiekt OpenWeatherCurrentWeatherRepository, który implementuje interface  CurrentWeatherRepositoryInterface za pomocą cUrl pobiera informacje o pogodzie a nastepnie zwraca obiekt typu CurrentWeater. Aby dodać innego dostawce informscji o aktualnej pogodzie nalezy utworzyć nowy obiekt implementujący interface CurrentWeatherRepositoryInterface w configuracji ustawić token i inne istotne dane, a nastpnie w plku App/Providers/AppServiceProvider dokonać przełączenia wskazania interfajsu na odpowedni obiekt resposytory.
+Obiekt OpenWeatherCurrentWeatherRepository, który implementuje interface  CurrentWeatherRepositoryInterface za pomocą cUrl pobiera informacje o pogodzie a nastepnie zwraca obiekt typu CurrentWeater. Aby dodać innego dostawce informacji o aktualnej pogodzie należy utworzyć nowy obiekt implementujący interface CurrentWeatherRepositoryInterface w configuracji ustawić token i inne istotne dane, a nastpnie w plku App/Providers/AppServiceProvider dokonać przełączenia wskazania interfejsu na odpowiedni obiekt resposytory.
 
-Po zalogowaniu sie istaniej możliwość dodawania usuwania  miasta oraz wskazania, które miasto ma być domyślnie ustawione.
+Po zalogowaniu się istnieje  możliwość dodawania usuwania  miasta oraz wskazania, które miasto ma być domyślnie ustawione.
 
-Dane pogodowe są oczywiści w okrojonej formie - nie było założeń jakie informacje dokładnie być przedswione dlatego pokazuje te najważniejsze wg mnie.
+Dane pogodowe są oczywiści w okrojonej formie - nie było założeń jakie informacje dokładnie maja być przedstawione, dlatego pokazuje te najważniejsze wg mnie.
 
 ## License
 
